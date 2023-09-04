@@ -53,7 +53,7 @@ export default function PhonesPage() {
                       <p
                         className="leading-relaxed"
                       >
-                        Preço: {phone.preco}
+                        Preço: R${phone.preco}
                       </p>
                       <p
                         className="leading-relaxed"
