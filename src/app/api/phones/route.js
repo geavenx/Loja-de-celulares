@@ -8,7 +8,6 @@ export async function GET(request) {
     const cookie = cookies();
 
     const token = cookie.get(COOKIE_NAME);
-    console.log(token)
     if (!token) {
         return NextResponse.json({
             message: "Invalid credentials"
@@ -43,7 +42,6 @@ async function getPhones(accessToken) {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
     const authorization = ("Bearer " + accessToken)
-    console.log(authorization)
 
     // Added Authorization header
     const opts = {
@@ -57,7 +55,6 @@ async function getPhones(accessToken) {
         const data = await axios.get(process.env.API_URL, opts)
         return data.data
     } catch (err) {
-        console.log(err.response.data)
         return null
     };
 };
